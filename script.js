@@ -203,7 +203,38 @@ function calculateResults() {
     UI.nenProfile.style.borderColor = resultInfo.color;
     UI.nenDesc.textContent = resultInfo.desc;
     
+    // Generate Stats Bars
+    const sortedTraits = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
+    const minRawScore = Math.min(...Object.values(scores));
+    const maxRawScore = Math.max(...Object.values(scores));
+    const range = (maxRawScore - minRawScore) || 1;
+    
+    const statsBarsHtml = sortedTraits.map(trait => {
+        const info = nenTypes[trait];
+        const rawScore = scores[trait];
+        const percentage = Math.round(((rawScore - minRawScore) / range) * 100);
+        
+        return `
+            <div class="stat-row">
+                <span class="stat-name">${info.name}</span>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" style="width: 0%; background-color: ${info.color}" data-width="${percentage}%"></div>
+                </div>
+                <span class="stat-score">${percentage}%</span>
+            </div>
+        `;
+    }).join('');
+    
+    document.getElementById('stats-bars').innerHTML = statsBarsHtml;
+    
     showScreen('result');
+
+    // Animate bars after a short delay so the transition triggers
+    setTimeout(() => {
+        document.querySelectorAll('.stat-bar-fill').forEach(bar => {
+            bar.style.width = bar.getAttribute('data-width');
+        });
+    }, 100);
 }
 
 function resetQuiz() {

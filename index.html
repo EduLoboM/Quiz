@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descubra seu Tipo de Nen</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700;800&family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Russo+One&family=Nunito:wght@400;600;700;800&family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -41,10 +41,21 @@
             <div id="result-screen" class="screen">
                 <div class="result-card">
                     <h2>Sua Categoria de Nen é:</h2>
-                    <h1 id="nen-type" class="nen-title">Reforço</h1>
-                    <div class="nen-kanji" id="nen-kanji">強化系</div>
-                    <div class="nen-profile" id="nen-profile">Perfil: Jogador</div>
+                    <div class="main-result">
+                        <div class="nen-kanji" id="nen-kanji">強化系</div>
+                        <h1 id="nen-type" class="nen-title">Reforço</h1>
+                        <div class="nen-profile" id="nen-profile">Perfil: Jogador</div>
+                    </div>
+                    
                     <p id="nen-description">...</p>
+                    
+                    <div class="stats-container">
+                        <h3>Sua Afinidade (Radar Nen)</h3>
+                        <div id="stats-bars">
+                            <!-- Injected via JS -->
+                        </div>
+                    </div>
+
                     <button id="restart-btn" class="secondary-btn">Refazer o Teste</button>
                 </div>
             </div>

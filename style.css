@@ -334,13 +334,21 @@ header p {
 }
 
 .nen-title {
-    font-family: 'Fredoka', sans-serif;
-    font-size: 3.5rem;
+    font-family: 'Russo One', sans-serif;
+    font-size: 4rem;
     margin: 1.5rem 0;
     text-transform: uppercase;
     color: var(--primary);
-    -webkit-text-stroke: 2px var(--border-color);
-    text-shadow: 4px 4px 0px var(--shadow-color);
+    text-shadow: 
+        -2px -2px 0 var(--border-color),
+         0   -2px 0 var(--border-color),
+         2px -2px 0 var(--border-color),
+         2px  0   0 var(--border-color),
+         2px  2px 0 var(--border-color),
+         0    2px 0 var(--border-color),
+        -2px  2px 0 var(--border-color),
+        -2px  0   0 var(--border-color),
+         6px  6px 0 var(--shadow-color);
 }
 
 .nen-kanji {
@@ -381,63 +389,11 @@ header p {
     margin-bottom: 1rem;
 }
 
-/* Stats Bars */
-.stats-container {
-    margin: 2rem 0 2.5rem 0;
-    text-align: left;
-    background: #f8fafc;
-    border: 3px solid var(--border-color);
-    border-radius: 16px;
-    padding: 1.5rem;
-    box-shadow: 4px 4px 0px var(--shadow-color);
-}
-
-.stats-container h3 {
-    font-family: 'Fredoka', sans-serif;
-    color: var(--text-main);
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
-    text-align: center;
-}
-
-.stat-row {
+.canvas-container {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.stat-row:last-child {
-    margin-bottom: 0;
-}
-
-.stat-name {
-    width: 120px;
-    font-weight: 800;
-    font-size: 0.95rem;
-    color: var(--text-main);
-}
-
-.stat-bar-bg {
-    flex: 1;
-    height: 14px;
-    background: #e2e8f0;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 2px solid var(--border-color);
-}
-
-.stat-bar-fill {
-    height: 100%;
-    border-radius: 4px;
-    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.stat-score {
-    width: 45px;
-    font-weight: 800;
-    text-align: right;
-    color: var(--text-muted);
+    margin: 2rem 0;
 }
 
 @keyframes fadeIn {

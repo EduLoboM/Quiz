@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra seu Tipo de Nen</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700;800&family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="logo"><span class="h1">HUNTER</span><span class="x">×</span><span class="h2">HUNTER</span></div>
+            <h1>Teste de Afinidade de Nen</h1>
+            <p>Descubra qual é a sua categoria de Nen com base na sua personalidade!</p>
+        </header>
+        
+        <main id="quiz-container">
+            <!-- Intro Screen -->
+            <div id="intro-screen" class="screen active">
+                <div class="hunter-card">
+                    <h2>Exame Hunter: Fase Oculta</h2>
+                    <p>Bem-vindo, candidato! Para sobreviver no mundo dos Hunters, você precisa conhecer sua própria aura. Este teste revelará sua categoria de Nen com base em seus comportamentos e atitudes (Reforço, Emissão, Manipulação, Materialização, Transformação ou Especialização).</p>
+                    <button id="start-btn" class="primary-btn">Iniciar Teste</button>
+                </div>
+            </div>
+
+            <!-- Questions Screen (All in one scroll) -->
+            <div id="questions-screen" class="screen">
+                <div id="all-questions-container">
+                    <!-- Questions injected by JS -->
+                </div>
+                
+                <div class="submit-container">
+                    <p id="error-message" class="error-hidden">Você precisa responder todas as perguntas para ver seu resultado!</p>
+                    <button id="submit-btn" class="primary-btn">Ver Resultado</button>
+                </div>
+            </div>
+
+            <!-- Result Screen -->
+            <div id="result-screen" class="screen">
+                <div class="result-card">
+                    <h2>Sua Categoria de Nen é:</h2>
+                    <h1 id="nen-type" class="nen-title">Reforço</h1>
+                    <div class="nen-kanji" id="nen-kanji">強化系</div>
+                    <div class="nen-profile" id="nen-profile">Perfil: Jogador</div>
+                    <p id="nen-description">...</p>
+                    <button id="restart-btn" class="secondary-btn">Refazer o Teste</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
